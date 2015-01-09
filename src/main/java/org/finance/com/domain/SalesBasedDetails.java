@@ -22,7 +22,7 @@ public class SalesBasedDetails implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String item;
+    private String cardNo;
     private double price;
 
     public int getId() {
@@ -33,12 +33,12 @@ public class SalesBasedDetails implements Serializable {
         this.id = id;
     }
 
-    public String getItem() {
-        return item;
+    public String getCardNo() {
+        return cardNo;
     }
 
-    public void setItem(String item) {
-        this.item = item;
+    public void setCardNo(String cardNo) {
+        this.cardNo = cardNo;
     }
 
     public double getPrice() {
