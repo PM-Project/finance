@@ -6,10 +6,13 @@
 package org.finance.com.domain;
 
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 /**
  *
@@ -22,8 +25,13 @@ public class SalesBasedDetails implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private String cardNo;
-    private double price;
+    private String particular;
+    private double amount;
+    private String deductFrom;
+    private String depositeTo;
+    
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date transactionDate;
 
     public int getId() {
         return id;
@@ -33,20 +41,46 @@ public class SalesBasedDetails implements Serializable {
         this.id = id;
     }
 
-    public String getCardNo() {
-        return cardNo;
+    
+
+    public String getParticular() {
+        return particular;
     }
 
-    public void setCardNo(String cardNo) {
-        this.cardNo = cardNo;
+    public void setParticular(String particular) {
+        this.particular = particular;
     }
 
-    public double getPrice() {
-        return price;
+    public double getAmount() {
+        return amount;
     }
 
-    public void setPrice(double price) {
-        this.price = price;
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public String getDeductFrom() {
+        return deductFrom;
+    }
+
+    public void setDeductFrom(String deductFrom) {
+        this.deductFrom = deductFrom;
+    }
+
+    public String getDepositeTo() {
+        return depositeTo;
+    }
+
+    public void setDepositeTo(String depositeTo) {
+        this.depositeTo = depositeTo;
+    }
+
+    public Date getTransactionDate() {
+        return transactionDate;
+    }
+
+    public void setTransactionDate(Date transactionDate) {
+        this.transactionDate = transactionDate;
     }
     
     
